@@ -1,0 +1,34 @@
+<template>
+  <div>
+    Welcome back, {{ loggedInUser.name }}
+    <div>
+      <button @click="logout">Logout</button>
+    </div>
+  </div>
+</template>
+
+<script>
+  import { mapGetters } from 'vuex'
+
+  export default {
+    head() {
+      return {
+        title: 'Dashboard'
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'loggedInUser'
+      ])
+    },
+    methods: {
+      async logout() {
+        await this.$auth.logout()
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
