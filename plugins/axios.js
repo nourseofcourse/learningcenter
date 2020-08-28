@@ -1,6 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: process.env.baseURL,
-  withCredentials: true
+  baseURL: process.env.baseURL
 })

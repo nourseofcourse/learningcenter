@@ -9,7 +9,7 @@ export const getters = {
 
 export const actions = {
   async nuxtServerInit({ dispatch }) {
-    // await dispatch('menu/fetchMenu')
+    //await dispatch('courses/fetchCourses')
     // await dispatch('posts/fetchPosts')
     // await dispatch('projects/fetchProjects')
   }

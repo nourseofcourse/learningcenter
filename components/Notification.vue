@@ -1,5 +1,5 @@
 <template>
-  <div class="notification  is-danger">{{ message }}</div>
+  <div class="notification  is-danger" v-html>{{ message }}</div>
 </template>
 
 <script>

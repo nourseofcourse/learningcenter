@@ -97,14 +97,15 @@ export default {
           login: {
             url: 'http://localhost/learncenter/wp-json/jwt-auth/v1/token',
             method: 'post',
-            propertyName: 'data.token'
+            propertyName: 'token'
           },
           user: {
             url: 'http://localhost/learncenter/wp-json/wp/v2/users/me',
             method: 'get',
             propertyName: ''
           },
-          logout: false
+          logout: false,
+          tokenRequired: true
         }
       }
     }

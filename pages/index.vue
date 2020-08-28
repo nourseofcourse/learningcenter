@@ -1,6 +1,8 @@
 <template>
   <div>
     Welcome back, {{ loggedInUser.name }}
+
+    <nuxt-link :to="{ name: 'courses' }">View all courses</nuxt-link>
     <div>
       <button @click="logout">Logout</button>
     </div>
