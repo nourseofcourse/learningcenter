@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="(user, index) in users" :key="index" :user="user">{{ user.data.user_nicename }}</li>
+      <li v-for="(user, index) in users" :key="index" :user="user">{{ user.data.user_nicename }} <button @click.prevent="switchUserTo(user.data.ID)">Switch To</button></li>
     </ul>
-    <nuxt-link :to="'/users/add'">Add User</nuxt-link>
+    <nuxt-link :to="'/admin/users/add'">Add User</nuxt-link>
   </div>
 </template>
 
@@ -12,6 +12,7 @@
 
   export default {
     name: "Users",
+    layout: 'admin',
     head() {
       return {
         title: 'Users'
@@ -21,6 +22,11 @@
       ...mapState({
         users: store => store.users.all
       })
+    },
+    methods: {
+      async switchUserTo(id) {
+        await this.$store.dispatch('switchUser', id)
+      }
     },
     async fetch({ store, error }) {
       try {

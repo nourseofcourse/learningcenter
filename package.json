@@ -20,7 +20,8 @@
     "jquery": "^3.5.1",
     "nuxt": "^2.14.3",
     "swiper": "^5.4.5",
-    "vue-scrollmagic": "^1.2.0"
+    "vue-scrollmagic": "^1.2.0",
+    "vuedraggable": "^2.24.1"
   },
   "devDependencies": {
     "eslint-config-prettier": "^4.1.0",

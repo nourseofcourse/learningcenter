@@ -87,6 +87,7 @@ import { mapState } from 'vuex'
 import UserService from '@/services/UserService.js';
   export default {
     name: 'adduser',
+    layout: 'admin',
     data() {
       return {
         user_login: '',

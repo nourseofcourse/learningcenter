@@ -5,8 +5,7 @@
         v-for="(course, index) in courses"
         :key="index"
         :course="course">
-        <nuxt-link :to="'/courses/' + course.slug">{{ course.title.rendered }}</nuxt-link>
-        <nuxt-link :to="'/courses/edit/' + course.id">edit</nuxt-link>
+        <nuxt-link :to="'/admin/courses/edit/' + course.id">{{ course.title.rendered }}</nuxt-link>
         </li>
     </ul>
   </div>
@@ -16,7 +15,8 @@
   import { mapState } from 'vuex'
 
   export default {
-    name: 'courses',
+    name: 'admin-courses',
+    layout: 'admin',
     head() {
       return {
         title: 'Courses'

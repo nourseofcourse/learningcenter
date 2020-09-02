@@ -9,5 +9,8 @@ export default {
   },
   getCourseBySlug(slug) {
     return axios.get('/wp/v2/course?slug=' + slug)
+  },
+  getCourseById(id) {
+    return axios.get('/wp/v2/course/' + id)
   }
 }
