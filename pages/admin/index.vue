@@ -1,13 +1,13 @@
 <template>
   <div>
-
+    Admin
   </div>
 </template>
 
 <script>
   export default {
-    layout: 'admin',
-    name: 'admin-dashboard'
+    name: 'admin-dashboard',
+    middleware: ['admin']
   }
 </script>
 

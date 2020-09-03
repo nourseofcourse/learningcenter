@@ -64,8 +64,18 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://auth.nuxtjs.org/#getting-started
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    // Doc: https://bootstrap-vue.org/docs
+    'bootstrap-vue/nuxt',
   ],
+  /*
+  ** Bootstrap Vue config
+  */
+  bootstrapVue: {
+    icons: true, // Install the IconsPlugin (in addition to BootStrapVue plugin),
+    bootstrapCSS: false, // Or `css: false`
+    bootstrapVueCSS: false // Or `bvCSS: false`
+  },
   /*
   ** Nuxt.js router
   */

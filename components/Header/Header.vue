@@ -1,8 +1,17 @@
 <template>
-  <header class="site-head site-head--fixed" ref="headroom">
-    <Logo />
-    <NavToggle />
-    <Menu />
+  <header ref="headroom" role="navigation">
+    <b-navbar type="dark" variant="dark"  class="navbar-horizontal">
+      <b-container>
+        <Logo />
+        <UserNav />
+      </b-container>
+    </b-navbar>
+    <b-navbar type="dark" variant="success" class="subnav">
+      <b-container>
+        <Menu />
+        <NavToggle />
+      </b-container>
+    </b-navbar>
   </header>
 </template>
 
@@ -11,13 +20,15 @@
   import NavToggle from '@/components/Header/NavToggle.vue';
   import Menu from '@/components/Header/Menu.vue';
   import Headroom from 'headroom.js'
+  import UserNav from '@/components/Header/UserNav.vue'
 
   export default {
     name: 'Header',
     components: {
       Logo,
       NavToggle,
-      Menu
+      Menu,
+      UserNav
     },
     mounted() {
       /**

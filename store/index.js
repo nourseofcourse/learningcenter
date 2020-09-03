@@ -6,19 +6,36 @@ export const getters = {
     return state.auth.user
   },
   viewingAsAdvisor(state) {
-    console.log(state.auth)
-    return state.auth.viewingAsAdvisor
+    if( state.auth.user ) {
+      return state.auth.user.acf.viewingasadvisor
+    }
+  },
+  isAdmin(state) {
+    if( state.auth.user ) {
+      const roles = state.auth.user.role
+      const viewingAs = state.auth.user.acf.viewingasadvisor
+      if( viewingAs == true && state.auth.user.acf.advisor ) {
+        const viewingRoles = state.auth.user.acf.advisor.role
+      }
+      return ( roles.includes('administrator') || roles.includes('servicer') ) && ( viewingAs != true )
+    }
+    return false
+  },
+  switchedUser(state) {
+    if( state.auth.user ) {
+      return state.auth.user.acf.advisor
+    }
   }
 }
 
 export const mutations = {
   TOGGLE_USER_SWITCH(state, user) {
     if(parseInt(state.auth.user.id) !== parseInt(user.ID)) {
-      state.auth.viewingAsAdvisor = Boolean(true)
-      state.auth.advisor = user.data
+      state.auth.user.acf.viewingasadvisor = true
+      state.auth.user.acf.advisor = user.data
     } else {
-      state.auth.viewingAsAdvisor = Boolean(false)
-      state.auth.advisor = null
+      state.auth.user.acf.viewingasadvisor = false
+      state.auth.user.acf.advisor = null
     }
   }
 }

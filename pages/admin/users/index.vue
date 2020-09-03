@@ -13,6 +13,7 @@
   export default {
     name: "Users",
     layout: 'admin',
+    middleware: ['admin'],
     head() {
       return {
         title: 'Users'

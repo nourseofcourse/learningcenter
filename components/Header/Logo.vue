@@ -1,9 +1,7 @@
 <template>
-  <div class="site-head__logo">
-    <nuxt-link to="/">
-      <img src="@/assets/images/nourse-gray.svg" alt="Brandon Nourse Tampa, FL Web Developer">
-    </nuxt-link>
-  </div>
+  <b-navbar-brand to="/">
+    <img src="@/assets/images/nourse-gray.svg" alt="Brandon Nourse Tampa, FL Web Developer">
+  </b-navbar-brand>
 </template>
 <style>
 </style>
