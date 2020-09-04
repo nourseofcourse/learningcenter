@@ -6,7 +6,7 @@
         <UserNav />
       </b-container>
     </b-navbar>
-    <b-navbar type="dark" variant="success" class="subnav">
+    <b-navbar type="dark" variant="info" class="subnav">
       <b-container>
         <Menu />
         <NavToggle />

@@ -1,15 +1,25 @@
 <template>
-  <div>
-    <ul>
-      <li
+  <b-container>
+    <b-row>
+      <b-col>
+        <h3>Courses</h3>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col
+        cols="4"
         v-for="(course, index) in courses"
         :key="index"
         :course="course">
-        <nuxt-link :to="'/courses/' + course.slug">{{ course.title.rendered }}</nuxt-link>
-        <nuxt-link :to="'/courses/edit/' + course.id">edit</nuxt-link>
-        </li>
-    </ul>
-  </div>
+          <b-card
+            class="mb-2"
+            :title="course.title.rendered">
+            <b-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</b-card-text>
+            <b-button :to="'/courses/' + course.slug" variant="info">View Course</b-button>
+          </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
