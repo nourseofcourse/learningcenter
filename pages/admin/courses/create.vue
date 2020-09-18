@@ -2,14 +2,15 @@
   <div class="wrapper">
     <header class="page-head">
       <div class="page-head__title">
-        <h2>Course Title</h2>
+        <h2>Create a Course</h2>
       </div>
     </header>
     <div class="page-content">
-      <button @click="addModule">Add Module</button>
+      <!-- <button @click="addModule">Add Module</button>
       <button @click="addLesson">Add Lesson</button>
       <button @click="saveCourse">Save Course</button>
-      <course-module-drag :tasks="modules"></course-module-drag>
+      <course-module-drag :tasks="modules"></course-module-drag> -->
+
     </div>
   </div>
 </template>

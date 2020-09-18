@@ -1,12 +1,11 @@
 <template>
-  <div>
-    Welcome back, {{ loggedInUser.name }}
-
-    <nuxt-link :to="{ name: 'courses' }">View all courses</nuxt-link>
-    <div>
-      <button @click="logout">Logout</button>
-    </div>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col>
+        <h3>Welcome back, {{ loggedInUser.name }}</h3>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -23,11 +22,6 @@
       ...mapGetters([
         'loggedInUser'
       ])
-    },
-    methods: {
-      async logout() {
-        await this.$auth.logout()
-      }
     }
   }
 </script>

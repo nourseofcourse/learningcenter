@@ -8,7 +8,7 @@ export default {
     return axios.get('/wp/v2/course/' + id)
   },
   getCourseBySlug(slug) {
-    return axios.get('/wp/v2/course?slug=' + slug)
+    return axios.get('/learningcenter/v1/course/' + slug)
   },
   getCourseById(id) {
     return axios.get('/wp/v2/course/' + id)

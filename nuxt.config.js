@@ -89,7 +89,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseUrl: 'http://localhost/learncenter/wp-json',
+    baseUrl: 'http://learningcenter/wp-json',
     withCredentials: true
   },
   /*
@@ -107,12 +107,12 @@ export default {
       local: {
         endpoints: {
           login: {
-            url: 'http://localhost/learncenter/wp-json/jwt-auth/v1/token',
+            url: 'http://learningcenter/wp-json/jwt-auth/v1/token',
             method: 'post',
             propertyName: 'token'
           },
           user: {
-            url: 'http://localhost/learncenter/wp-json/wp/v2/users/me',
+            url: 'http://learningcenter/wp-json/wp/v2/users/me',
             method: 'get',
             propertyName: ''
           },
@@ -127,7 +127,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-env/
   */
   env: {
-    baseURL: 'http://localhost/learncenter/wp-json'
+    baseURL: 'http://learningcenter/wp-json'
   },
   /*
   ** Build configuration

@@ -1,3 +1,5 @@
+import { state } from "./menu"
+
 export const getters = {
   isAuthenticated(state) {
     return state.auth.loggedIn
@@ -25,6 +27,11 @@ export const getters = {
     if( state.auth.user ) {
       return state.auth.user.acf.advisor
     }
+  },
+  getModuleLessons(state) {
+    return [...state.courses.course.lessons].filter(lesson => {
+      lesson.ID == 14
+    })
   }
 }
 

@@ -1,14 +1,22 @@
 <template>
-  <div>
-    <ul>
-      <li
-        v-for="(course, index) in courses"
-        :key="index"
-        :course="course">
-        <nuxt-link :to="'/admin/courses/edit/' + course.id">{{ course.title.rendered }}</nuxt-link>
-        </li>
-    </ul>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col>
+        <h3>Courses</h3>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-table striped hover :items="courses" :fields="fields">
+          <template v-slot:cell(id)="data">
+            <nuxt-link :to="'/admin/courses/edit/' + data.value">Edit</nuxt-link>
+          </template>
+        </b-table>
+        <nuxt-link :to="'/admin/courses/create'">Create Course</nuxt-link>
+      </b-col>
+    </b-row>
+  </b-container>
+
 </template>
 
 <script>
@@ -20,6 +28,14 @@
     head() {
       return {
         title: 'Courses'
+      }
+    },
+    data() {
+      return {
+        fields: [
+          { key: 'title.rendered', label: 'Course Title' },
+          { key: 'id', label: 'Actions'}
+        ]
       }
     },
     computed: {

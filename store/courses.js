@@ -24,7 +24,7 @@ export const actions = {
   fetchCourseBySlug({ commit }, slug) {
     return CourseService.getCourseBySlug(slug).then(response => {
       // Pop the result because WordPress returns an array
-      commit('SET_COURSE', response.data.pop())
+      commit('SET_COURSE', response.data)
     })
   },
   fetchCourseById({ commit }, id) {

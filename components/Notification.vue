@@ -1,5 +1,5 @@
 <template>
-  <div class="notification  is-danger" v-html>{{ message }}</div>
+  <b-alert show variant="danger" v-html="message"></b-alert>
 </template>
 
 <script>

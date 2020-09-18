@@ -1,12 +1,24 @@
 <template>
-  <div>
-    <form method="post" @submit.prevent="login">
-      <Notification :message="error" v-if="error" />
-      <input type="text" class="form__input" id="username" placeholder="Enter username" name="username" v-model="username">
-      <input type="text" class="form__input" id="password" placeholder="Enter password" name="password" v-model="password">
-      <button class="form__button" type="submit">Log In</button>
-    </form>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col :cols="4" :offset="4">
+        <form method="post" @submit.prevent="login">
+          <div class="form-group">
+            <Notification :message="error" v-if="error" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" v-model="username">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="password" placeholder="Enter password" name="password" v-model="password">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-info" type="submit">Log In</button>
+          </div>
+        </form>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

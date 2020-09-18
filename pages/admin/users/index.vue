@@ -1,10 +1,24 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="(user, index) in users" :key="index" :user="user">{{ user.data.user_nicename }} <button @click.prevent="switchUserTo(user.data.ID)">Switch To</button></li>
-    </ul>
-    <nuxt-link :to="'/admin/users/add'">Add User</nuxt-link>
-  </div>
+  <b-container>
+    <b-row>
+      <b-col>
+        <h3>Courses</h3>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-table striped hover :items="users" :fields="fields">
+          <template v-slot:cell(roles)="data">
+            {{ data.value[0] }}
+          </template>
+          <template v-slot:cell(data.ID)="data">
+            <button @click.prevent="switchUserTo(data.value)">Switch To</button>
+          </template>
+        </b-table>
+        <nuxt-link :to="'/admin/users/add'">Add User</nuxt-link>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -14,6 +28,17 @@
     name: "Users",
     layout: 'admin',
     middleware: ['admin'],
+    data() {
+      return {
+        fields: [
+          { key: 'data.display_name', label: 'Name' },
+          { key: 'data.user_email', label: 'Email Address' },
+          { key: 'data.user_login', label: 'Login' },
+          { key: 'roles', label: 'Role' },
+          { key: 'data.ID', label: 'Actions' }
+        ]
+      }
+    },
     head() {
       return {
         title: 'Users'
